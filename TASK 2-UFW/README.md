@@ -1,29 +1,51 @@
-UFW Firewall Configuration (Kali Linux)
+UFW Firewall Configuration on Kali Linux
+Overview
 
-#Overview
+This project demonstrates basic firewall configuration using UFW (Uncomplicated Firewall) on Kali Linux. The firewall is enabled to secure the system by controlling incoming network connections. Specific rules are applied to allow SSH access and block HTTP traffic.
 
-This project demonstrates basic firewall configuration using UFW (Uncomplicated Firewall) in Kali Linux. The firewall is enabled, SSH access is allowed, and HTTP traffic is blocked.
+Steps Performed
+1. Enable the Firewall
 
-#Commands Used
+The UFW firewall was activated using the following command:
 
-Enable firewall:
 sudo ufw enable
 
-Allow SSH access:
+This enables the firewall and ensures it starts automatically during system startup.
+
+2. Allow SSH Connections
+
+SSH access was allowed so that remote login to the system is possible.
+
 sudo ufw allow ssh
 
-Block HTTP traffic:
+This opens port 22 for incoming SSH connections.
+
+3. Block HTTP Traffic
+
+HTTP traffic was blocked to prevent incoming web requests.
+
 sudo ufw deny http
 
-Check firewall status:
+This blocks port 80 from external connections.
+
+4. Verify Firewall Status
+
+The firewall configuration was verified using:
+
 sudo ufw status verbose
 
-#Result
+This command displays the firewall status, default policies, and active rules.
 
-Firewall is active and enabled on startup.
-SSH (Port 22) is allowed for remote access.
-HTTP (Port 80) is blocked for incoming connections.
+Result
 
-#Conclusion
+Firewall is active and enabled.
 
-UFW successfully controls network access by allowing only required services and blocking unnecessary traffic.
+SSH (Port 22) is allowed.
+
+HTTP (Port 80) is denied.
+
+Default policy denies incoming connections and allows outgoing traffic.
+
+Conclusion
+
+The firewall was successfully configured using UFW to enhance system security by allowing only necessary services and blocking unwanted network traffic
